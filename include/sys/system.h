@@ -7,4 +7,5 @@ char user[100];
 int userid;
 int taskid;
 char nametask[100];
+volatile void panic(const char * str);
 #endif // !SYSTEM_h
