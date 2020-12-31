@@ -2,8 +2,8 @@
 static char rcsid[] = "$Id: unzip.c,v 0.9 1993/02/10 16:07:22 jloup Exp $";
 #endif
 
-#include "gzip.h"
-#include "crypt.h"
+#include <core/gzip.h>
+#include <core/crypt.h>
 
 #include <stdio.h>
 
