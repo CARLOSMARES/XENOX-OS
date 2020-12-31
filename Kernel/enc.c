@@ -1,4 +1,4 @@
-#include <enc.h>
+#include <sys/enc.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

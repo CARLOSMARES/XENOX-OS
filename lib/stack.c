@@ -1,4 +1,4 @@
-#include <stack.h>
+#include <core/stack.h>
 #include <stdlib.h>
 
 int create(struct pila *p, int nro_elementos){

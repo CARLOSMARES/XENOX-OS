@@ -1,4 +1,4 @@
-#include <queue.h>
+#include <core/queue.h>
 #include <stdlib.h>
 
 void add(pNodo *first, pNodo *last, int v)
