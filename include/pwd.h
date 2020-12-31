@@ -1,16 +1,15 @@
 #ifndef _PWD_H
 #define _PWD_H
 
-struct pwd{
-    int id;
-    char name[500];
-    char pass[100];
-    int pid;
-    char Date[10];
-    int access;
-    int state;
+struct passwd
+{
+    char *pw_name;
+    char *pw_passwd;
+    int pw_uid;
+    int pw_guid;
+    char *pw_gecos;
+    char *pw_dir;
+    char *pw_shell;
 };
-
-int loggin(struct pwd * user, char username[500], char password[500]);
 
 #endif
