@@ -183,87 +183,87 @@ void cls()
 unsigned int k_xy_printf(char *message, unsigned int x, unsigned int y, int color) 
 // El mensaje y su posicion X e Y   
 { 	
-char *vidmem = (char *) 0xb8000; 	unsigned int i = 0; 	
-if((x == 0) && (y == 0))
-{ 		
-i=(0); 	
-}
-else if(y == 0)
-{ 		
-i=(x*2); 	
-}
-else if(x == 0)
-{ 		
-i=(y*2); 	
-}
-else
-{ 		
-i=(y*x*2); 	
-};
-while(*message!=0) 	
-{ 		
-if(*message=='\n') 
-// comprobamos para el caracter especial de nueva linea 		
-{ 			
-y++; 			
-x=0; 			
-if((x == 0) && (y == 0))
-{ 				
-i=(0); 			
-}
-else if(y == 0)
-{ 				
-i=(x*2); 			
-}
-else if(x == 0)
-{ 				
-i=(y*2); 			
-}
-else
-{ 				
-i=(y*x*2); 		
-}; 			
-*message++; 		
-} 
-else 
-{ 			
-if( x >= 80)
-{ 				
-while(x >=80)
-{ 					
-x -= 80; 				
-}; 				
-if((x == 0) && (y == 0))
-{ 					
-i=(0); 				
-}
-else if(y == 0)
-{ 					
-i=(x*2); 				
-}
-else if(x == 0)
-{ 					
-i=(y*2); 				
-}
-else
-{ 					
-i=(y*x*2); 				
-}; 			
-}; 			
-vidmem[i]=*message; 			
-*message++; 			
-i++; 			
-vidmem[i]=color; 			
-i++; 		
-}; 	
-}; 	
-return(1); 
+	char *vidmem = (char *) 0xb8000; 	unsigned int i = 0; 	
+	if((x == 0) && (y == 0))
+	{ 		
+		i=(0); 	
+	}
+	else if(y == 0)
+	{ 		
+		i=(x*2); 	
+	}
+	else if(x == 0)
+	{ 		
+		i=(y*2); 	
+	}
+	else
+	{ 		
+		i=(y*x*2); 	
+	};
+	while(*message!=0) 	
+	{ 		
+		if(*message=='\n') 
+		// comprobamos para el caracter especial de nueva linea 		
+		{ 			
+			y++; 			
+			x=0; 			
+			if((x == 0) && (y == 0))
+			{ 				
+				i=(0); 			
+			}
+			else if(y == 0)
+			{ 				
+				i=(x*2); 			
+			}
+			else if(x == 0)
+			{ 				
+				i=(y*2); 			
+			}
+			else
+			{ 				
+				i=(y*x*2); 		
+			}; 			
+			*message++; 		
+		} 
+		else 
+		{ 			
+			if( x >= 80)
+			{ 				
+				while(x >=80)
+				{ 					
+					x -= 80; 				
+				}; 				
+				if((x == 0) && (y == 0))
+				{ 					
+					i=(0); 				
+				}
+				else if(y == 0)
+				{ 					
+					i=(x*2); 				
+				}
+				else if(x == 0)
+				{ 					
+					i=(y*2); 				
+				}
+				else
+				{ 					
+					i=(y*x*2); 				
+				}; 			
+			}; 			
+			vidmem[i]=*message; 			
+			*message++; 			
+			i++; 			
+			vidmem[i]=color; 			
+			i++; 		
+		}; 	
+	}; 	
+	return(1); 
 };
 int scanf (char *format, unsigned args)
 {
-	return _doscanf (0, stdin, format, &args);
+	return doscanf (0, stdin, format, &args);
 }
-_doscanf ( int code, char *funcarg, char *format, unsigned ptr_union *argp)
+int doscanf ( int code, char *funcarg, char *format, unsigned ptr_union *argp)
 {
 	int             done = 0;	/* number of items done */
 	int             base;		/* conversion base */
