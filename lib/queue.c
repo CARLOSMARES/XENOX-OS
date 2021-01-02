@@ -1,5 +1,5 @@
-#include <core/queue.h>
-#include <stdlib.h>
+#include "queue.h"
+#include <malloc.h>
 
 void add(pNodo *first, pNodo *last, int v)
 {

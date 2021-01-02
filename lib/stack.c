@@ -1,14 +1,13 @@
-#include <core/stack.h>
-#include <stdlib.h>
+#include "stack.h"
 
-int create(struct pila *p, int nro_elementos){
+int create(struct stack *p, int nro_elementos){
 
    if( nro_elementos < 0) { return 0; }
    
    struct element arreglo_elementos[nro_elementos];
-   p->elementos = &arreglo_elementos;
-   p->tope = nro_elementos - 1;
-   p->contador = 0;
+   p->elements = arreglo_elementos;
+   p->top = nro_elementos - 1;
+   p->count = 0;
    return 1;
 }
 

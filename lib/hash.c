@@ -1,4 +1,4 @@
-#include <Core/hash.h>
+#include "hash.h"
 #include <string.h>
 #include <stdlib.h>
 #include <stdbool.h>
@@ -33,7 +33,7 @@ void insert(int key, int data)
     while (hashArray[hashIndex] != NULL && hashArray[hashIndex]->key != -1)
     {
         ++hashIndex;
-        hashIndex %= SIZE
+        hashIndex %= SIZE;
     }
     hashArray[hashIndex] = item;
 }
