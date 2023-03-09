@@ -23,7 +23,8 @@ load_kernel:
 	mov dl, [BOOT_DRIVE]
 	call disk_load
 	ret
-[bits 16]
+
+[bits 32]
 BEGIN_32BIT:
 	call KERNEL_OFFSET
 	jmp $
